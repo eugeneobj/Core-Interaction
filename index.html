@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style>
+
+	html, body {
+		width: 100%;
+		height: 100%;
+		}
+	
+	.translucent{
+		opacity: 0.5
+		}
+
+	.center{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		}
+	
+			.container1 {
+				width:100%;
+				height:100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				}
+
+			.container2{
+				width:20vh; /* 20% screen size */
+				height:20vh;
+				border-radius: 50%; /* circle border */
+				overflow: hidden; /* crop 1/3 */
+				position:relative; /* crop 2/3 */
+				z-index:1; /* crop 3/3 */
+				}
+
+					.diamond3 {
+						width: 0;
+						height: 0;
+						border: 10vmin solid transparent;
+						border-bottom-color: #DF9A9A;
+						position: absolute;
+						top: -10vmin;
+						}
+					.diamond3:after {
+						content: '';
+						position: absolute;
+						left: -10vmin;
+						top: 10vmin;
+						width: 0;
+						height: 0;
+						border: 10vmin solid transparent;
+						border-top-color: #DF9A9A;
+						}
+	
+					.diamond2 {
+						width: 0;
+						height: 0;
+						border: 20vmin solid transparent;
+						border-bottom-color: #A5879E;
+						position: absolute;
+						top: -20vmin;
+						}
+					.diamond2:after {
+						content: '';
+						position: absolute;
+						left: -20vmin;
+						top: 20vmin;
+						width: 0;
+						height: 0;
+						border: 20vmin solid transparent;
+						border-top-color: #A5879E;
+						}
+
+					.diamond1 {
+						width: 0;
+						height: 0;
+						border: 30vmin solid transparent;
+						border-bottom-color: #6B5993;
+						position: absolute;
+						top: -30vmin;
+						}
+					.diamond1:after {
+						content: '';
+						position: absolute;
+						left: -30vmin;
+						top: 30vmin;
+						width: 0;
+						height: 0;
+						border: 30vmin solid transparent;
+						border-top-color: #6B5993;
+						}
+
+	@keyframes bounce1 {
+		30%{ transform: translate(0px, 100px);}
+		100%{ transform: initial;}
+		}
+
+	@keyframes bounce2 {
+		60%{ transform: translate(0px, 100px);}
+		100%{ transform: initial;}
+		}
+
+	@keyframes bounce3 {
+		90% { transform: translate(0px, 100px);}
+		100%{ transform: initial;}
+		}
+
+	.animated1 {animation: bounce1 3s infinite linear;}
+	.animated2 {animation: bounce2 6s infinite linear;}
+	.animated3 {animation: bounce3 9s infinite linear;}
+
+</style>
+
+</head>
+	<body>
+		<div class="center">
+			<div class="container1">
+				<div class="diamond1 animated1 translucent"></div>
+				<div class="diamond2 animated2 translucent"></div>
+				<div class="diamond3 animated3 translucent"></div>
+			</div>
+		</div>
+	</body>
+</html>
+
